@@ -12,7 +12,7 @@ nav{
     padding: 30px 5px;
     background: #fffff555;
     position: fixed;
-    align-items: baseline;
+    align-items: baseline; //讓文字與基準線對齊(置中)
     z-index: 1;
     width: 100vw;
     border-bottom: 1px solid $color-black-33;
@@ -40,6 +40,7 @@ nav{
     }
 }
 @mixin section-box {
+    overflow: hidden; //超出範圍隱藏 隱藏下方滾動卷軸
     display: grid;
     grid-template-columns: repeat(2,1fr);
     img{
@@ -59,12 +60,14 @@ nav{
 }
 #notice{
     @include section-box();
-    grid-template-areas: "text pic";
+
+    grid-template-areas: "text pic"; //設定文字在左 圖片在右
+
     *:nth-child(1){
-        grid-area: pic;
+        grid-area: pic; //設定圖片為一個區域
     }
     *:nth-child(2){
-        grid-area: text;
+        grid-area: text; //設定文字為一個區域
     }
     h1{
         text-align: center;
@@ -83,7 +86,6 @@ h1{
     width: 20%;
     margin: 0 auto;
     img{
-        
         width: 60%;
     }
 }
