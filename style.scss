@@ -1,0 +1,93 @@
+$color-black:#252525;
+$color-black-33:#00000033;
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 微軟正黑體;
+}
+nav{
+    display: grid;
+    grid-template-columns: 20% 50% 10% 10% 10%;
+    padding: 30px 5px;
+    background: #fffff555;
+    position: fixed;
+    align-items: baseline;
+    z-index: 1;
+    width: 100vw;
+    border-bottom: 1px solid $color-black-33;
+
+    #logo{
+        color: $color-black;
+        text-align: center;
+        font-size: 24px;
+        &:hover{
+            font-size: 30px;
+            transition: 0.5s;
+            font-weight: 35px;
+        }
+    }
+    a{
+        text-decoration: none;
+        color: $color-black;
+        text-align: center;
+    }
+}
+#banner{
+    img{
+        height: 100vh;
+        object-fit: cover; //防止圖片變形
+    }
+}
+@mixin section-box {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    img{
+        width: 100%;
+    }
+}
+#about {
+    @include section-box();
+    h1{
+        text-align: center;
+        margin-top: 200px;
+    }
+    p{
+        padding: 20px;
+        line-height: 50px;
+    }
+}
+#notice{
+    @include section-box();
+    grid-template-areas: "text pic";
+    *:nth-child(1){
+        grid-area: pic;
+    }
+    *:nth-child(2){
+        grid-area: text;
+    }
+    h1{
+        text-align: center;
+        margin-top: 300px;
+    }
+    p{
+        padding: 20px;
+        line-height: 50px;
+    }
+}
+h1{
+    text-align: center;
+    padding: 20px;
+}
+#brand{
+    width: 20%;
+    margin: 0 auto;
+    img{
+        
+        width: 60%;
+    }
+}
+footer{
+    margin:80px 0 50px 0;
+    text-align: center;
+}
