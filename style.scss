@@ -61,14 +61,15 @@ nav{
 #notice{
     @include section-box();
 
-    grid-template-areas: "text pic"; //設定文字在左 圖片在右
-
     *:nth-child(1){
         grid-area: pic; //設定圖片為一個區域
     }
     *:nth-child(2){
         grid-area: text; //設定文字為一個區域
     }
+
+    grid-template-areas: "text pic"; //設定文字在左 圖片在右
+    
     h1{
         text-align: center;
         margin-top: 300px;
